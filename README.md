@@ -99,5 +99,4 @@ The app uses local storage for watchlist and favorites to ensure data persistenc
 Error handling is implemented for invalid search queries, network issues (if applicable), and JSON parsing.
 The JSON file contains 10-15 movies with all required fields as per the sample structure.
 
-Implemented for CentraLogic Consultancy Pvt. Ltd. at:
-Address: AVance II, 11th Floor, Tower A, Nalanda SEZ, Near Blue Ridge, Hinjawadi Phase 1, Hinjawadi, Pune 411057
+
