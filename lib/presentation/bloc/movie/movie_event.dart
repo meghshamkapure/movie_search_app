@@ -39,7 +39,7 @@ class AddToFavorites extends MovieEvent {
   List<Object?> get props => [movie];
 }
 
-class RemoveFromFavorites extends MovieEvent {
+class RemoveFromFavorites extends MovieEvent {  
   final Movie movie;
   RemoveFromFavorites(this.movie);
   @override

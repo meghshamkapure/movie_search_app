@@ -11,10 +11,13 @@ import 'presentation/screens/auth/register_screen.dart';
 import 'presentation/screens/main_navigation.dart';
 import 'presentation/screens/splash_screen.dart';
 
+
+//runs the app
 void main() {
   runApp(const MovieSearchApp());
 }
 
+//AppHomeScreen
 class MovieSearchApp extends StatelessWidget {
   const MovieSearchApp({super.key});
 
@@ -44,6 +47,7 @@ class AppNavigator extends StatefulWidget {
 class _AppNavigatorState extends State<AppNavigator> {
   bool showLogin = false;
   bool showRegister = false;
+  bool showSimpleSplash = true;
 
   void showLoginScreen() {
     setState(() {
@@ -67,12 +71,25 @@ class _AppNavigatorState extends State<AppNavigator> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 5), () {
+      setState(() {
+        showSimpleSplash = false;
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Movie Search App',
       theme: ThemeData.dark(),
       home: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
+          if (showSimpleSplash) {
+            return const SplashScreen();
+          }
           if (state is Authenticated) {
             return const MainNavigation();
           } else if (showLogin) {
@@ -80,7 +97,7 @@ class _AppNavigatorState extends State<AppNavigator> {
           } else if (showRegister) {
             return RegisterScreen(onLoginTap: showLoginScreen);
           } else {
-            return SplashScreen(
+            return SplashScreenWithButtons(
               onRegisterTap: showRegisterScreen,
               onLoginTap: showLoginScreen,
             );
