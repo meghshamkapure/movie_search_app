@@ -11,7 +11,7 @@ Favorite/Bookmark Movies: Users can bookmark favorite movies, stored locally usi
 State Management: Implemented using the BLoC pattern to handle search queries, data states (loading, success, failure), and UI feedback (e.g., no results found).
 UI/UX Design: Clean, intuitive, and responsive design with smooth navigation and transitions, optimized for various screen sizes.
 JSON Integration: Movie data is fetched from a JSON file stored in the assets folder, containing details for 10-15 movies.
-
+```
 Project Structure
 lib/
 ├── bloc/                    # BLoC classes for state management
@@ -21,7 +21,7 @@ lib/
 ├── services/                # Data handling (e.g., JSON parsing, local storage)
 ├── assets/                  # JSON file and other assets
 └── main.dart                # Entry point of the application
-
+```
 Dependencies
 
 flutter_bloc: For state management.
